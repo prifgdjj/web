@@ -1,0 +1,283 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
+    position: relative;
+    transition: background-color 1.5s ease-in-out, opacity 1.5s ease-in-out, transform 1s ease-in-out;
+    background-size: 200% 200%;
+    animation: rotateBackground 15s linear infinite; /* Rotate background gradient */
+    color: #333;
+}
+
+/* Light Theme Styles */
+body.light {
+    background: linear-gradient(45deg, #f9d5e5, #b3e0ff); /* Light pastel pink and blue */
+    color: #333; /* Dark text for readability in light mode */
+}
+
+/* Dark Theme Styles */
+body.dark {
+    background: linear-gradient(45deg, #2c3e50, #34495e); /* Dark blues */
+    color: #ddd; /* Light gray text for better visibility in dark mode */
+}
+
+/* Keyframes for rotating background gradient */
+@keyframes rotateBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Snowflakes Animation */
+.snowflake {
+    position: absolute;
+    top: -10px;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    opacity: 0.8;
+    border-radius: 50%;
+    animation: fall 8s infinite linear;
+}
+
+/* Snowflakes in Light Theme */
+body.light .snowflake {
+    background-color: #fff;
+}
+
+/* Snowflakes in Dark Theme */
+body.dark .snowflake {
+    background-color: #8e8e8e; /* Gray snowflakes for dark mode */
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0.5;
+    }
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 1.2em;
+    position: absolute;
+    top: 20px;
+    left: 20px; /* Keep it on the left */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Play Button */
+.play-btn {
+    padding: 15px 25px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5em;
+    position: absolute;
+    top: 100px; /* Adjust the top to separate from the theme toggle button */
+    left: 20px; /* Align with the theme toggle button on the left */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.play-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Main Content Styling */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Buttons for section navigation */
+.btn {
+    padding: 12px 30px;
+    background-color: #f8b6d3;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for light theme (buttons will have a magenta gradient) */
+body.light .btn {
+    background: linear-gradient(45deg, #ff66b2, #ff99cc); /* Magenta gradient */
+}
+
+body.light .btn:hover {
+    background: linear-gradient(45deg, #ff99cc, #ff66b2); /* Reverse magenta gradient on hover */
+}
+
+/* Hover effect for dark theme (buttons will have a yellow gradient) */
+body.dark .btn {
+    background: linear-gradient(45deg, #f1c40f, #f39c12); /* Yellow gradient */
+}
+
+body.dark .btn:hover {
+    background: linear-gradient(45deg, #f39c12, #f1c40f); /* Reverse yellow gradient on hover */
+}
+
+/* Content Sections */
+.content-section {
+    display: none;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 20px auto;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light Theme Content Section */
+body.light .content-section {
+    background-color: #ffffff; /* White background for content box */
+    color: #333; /* Dark text for readability */
+}
+
+/* Dark Theme Content Section */
+body.dark .content-section {
+    background-color: #444; /* Dark background for content box */
+    color: #ddd; /* Light text for readability */
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+    font-size: 0.9em;
+}
+
+/* Additional Styling for Section Titles */
+h1, h2, p {
+    transition: color 0.3s ease;
+}
+
+h1 {
+    color: inherit;
+}
+
+h2 {
+    color: inherit;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+p {
+    color: inherit;
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Larger and more attractive text for Partner and Rules sections */
+.content-section ul li {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    color: #555;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+/* Owner Card Layout */
+.owner-card {
+    display: inline-block;
+    width: 250px;
+    margin: 15px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.owner-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.owner-card h3 {
+    font-size: 1.6em;
+    margin: 10px 0;
+    color: #333;
+}
+
+.owner-card p {
+    font-size: 1.1em;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+/* Header Box */
+.header-box {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.header-box h1 {
+    color: #2e68a1;
+    font-size: 3.5em;
+    margin: 0;
+}
+
+.header-box p {
+    font-size: 1.4em;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* Image Styles */
+img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Make images round */
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* Light Theme Specific Text Visibility Fix */
+body.light .content-section ul li {
+    color: #333; /* Dark text in light theme */
+}
+
+/* Dark Theme Specific Text Visibility Fix */
+body.dark .content-section ul li {
+    color: #ddd; /* Lighter text in dark theme */
+}
